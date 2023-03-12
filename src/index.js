@@ -33,3 +33,32 @@
 
 
 import './styles/style.css'
+
+import object from "./template/renderObject.hbs";
+import objectArray from "./template/renderObjectArray.hbs";
+import array from "./template/renderArray.hbs";
+import arrayObject from "./template/renderArrayObject.hbs";
+
+import { base, list, frameworks, libs } from "./data/hbsData.js";
+
+
+const markupObject = object(base); 
+
+const root = document.querySelector('#root')
+root.insertAdjacentHTML("beforeend", markupObject);
+
+const markupObjectArray = objectArray(list)
+// console.log(markupArray)
+root.insertAdjacentHTML("beforeend", markupObjectArray);
+
+const markupArray = array(frameworks);
+root.insertAdjacentHTML("beforeend", markupArray);
+
+const markupArrayObject = arrayObject(libs);
+root.insertAdjacentHTML("beforeend", markupArrayObject);
+
+
+// Вводимо текст в поле і вони додаються в список по натисканню Add на екран
+
+
+// і зберігалось в локал сторедж?
